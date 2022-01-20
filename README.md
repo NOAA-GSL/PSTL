@@ -1,23 +1,7 @@
 # Parallel Standard Template Library 
 Simple tests for the Parallel Standard Template Library (PSTL)
 
-
-## Status of Tests
-| Symbol | Meaning        |
-| ------ |:--------------:|
-| N      | Not Working    |
-| Y      | Works          |
-| -      | To Be Done     |
-
-### Current Status
-| Compiler      |     stl_sort     |    stl_vector      |  strided_vector  | strided_stride  |
-| ------------- |:----------------:|:------------------:|:----------------:|:---------------:|
-| GCC 11.1      |
-| GCC 11.1 + TBB 2021.3.0 |    
-| NVHPC         |
-| NVHPC + A100  |
-
-### Instructions to Compile
+## Instructions to Compile
 
 1. Download the repository:
 ```console
@@ -41,7 +25,7 @@ cd build
 	- TBB_ROOT 
 	    - CMake will check for Intel Thread Building Blocks if using the GCC compiler
 	```console 
-    export TBB_ROOT=/my/path/to/tbb               # MPI Wrapped C Compiler
+    export TBB_ROOT=/my/path/to/tbb               # TBB Library for GCC
     ```
 
 
@@ -50,6 +34,14 @@ cd build
 cmake ..
 ```
 CMake tries to determine the platform you use, and will look for the required tools. It will report if something is missing.
+
+
+5. Build and Install the tests cases:
+```console
+make 
+make install
+```
+
 
 ## Instructions to Run
 
@@ -66,7 +58,22 @@ cd test
 ./test_<case_name>
 ```
 
+## Current Status
 
+### Status of Tests
+| Symbol | Meaning        |
+| ------ |:--------------:|
+| N      | Not Working    |
+| Y      | Works          |
+| -      | To Be Done     |
+
+### Current Status
+| Compiler      |     stl_sort     |    stl_vector      |  strided_vector  | strided_stride  |
+| ------------- |:----------------:|:------------------:|:----------------:|:---------------:|
+| GCC 11.1      |
+| GCC 11.1 + TBB 2021.3.0 |    
+| NVHPC -stdpar=gpu      |
+| NVHPC 21.7 -stdpar=multicore  |
 
 
 

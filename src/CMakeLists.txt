@@ -44,7 +44,7 @@ set_target_properties(${xstd_library_name}
 #
 # Copy all header files to the installation folder
 #
-install(FILES "${MY_PROJECT_INCDIR}/xstd.hpp" DESTINATION ${MY_INSTALL_INCDIR})
+#install(FILES "${MY_PROJECT_INCDIR}/xstd.hpp" DESTINATION ${MY_INSTALL_INCDIR})
 install(DIRECTORY "${MY_PROJECT_INCDIR}/xstd" DESTINATION ${MY_INSTALL_INCDIR})
 
 #

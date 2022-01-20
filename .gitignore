@@ -1,0 +1,15 @@
+#
+# Files to ignore from git repo
+#
+
+# User created build directory if exists
+build/*
+
+# Eclipse Project Files
+.project
+.cproject
+.pydevproject
+.settings
+
+# VSCode Files
+.vscode

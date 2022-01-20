@@ -33,6 +33,13 @@ function(add_pstl_test test_name)
 	add_test(${test_name} ${test_target})
 endfunction()
 
+# Install runall.sh script
+install(
+	FILES "runall.sh" 
+	PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
+	DESTINATION "${MY_INSTALL_TSTDIR}"
+)
+
 #
 # List files to compile/test
 #
