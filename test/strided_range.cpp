@@ -12,6 +12,8 @@
 #include "helpers.hpp"
 #include "xstd/range.hpp"
 
+/** Functor to Time
+ */
 template <typename T>
 class STRIDED_SAXPY {
    public:

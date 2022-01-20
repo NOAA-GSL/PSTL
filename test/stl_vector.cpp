@@ -11,6 +11,8 @@
 
 #include "helpers.hpp"
 
+/** Functor to Time
+ */
 template <typename T>
 class SAXPY {
    public:
