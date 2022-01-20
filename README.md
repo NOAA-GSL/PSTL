@@ -36,7 +36,7 @@ cmake ..
 CMake tries to determine the platform you use, and will look for the required tools. It will report if something is missing.
 
 
-5. Build and Install the tests cases:
+5. Build and Install the test cases:
 ```console
 make 
 make install
@@ -45,12 +45,12 @@ make install
 
 ## Instructions to Run
 
-1. Run test cases.
+1. Run all test cases for simple Pass/Fail
 ```console
 make test
 ```
 
-2. Detailed test case information
+2. Obtain detailed test case Pass/Fail information
 The test cases print out more detailed information as they run but this information is not displayed using the 
 cmake test environment.  To view the output each test can be manualy run from within the testing directory.
 ```console

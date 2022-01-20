@@ -47,6 +47,7 @@ lscpu
 # ----------------------------------------------
 cmake ..
 make
+make install
 
 # ----------------------------------------------
 # Run the tests and get detailed output
