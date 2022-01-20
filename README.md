@@ -68,12 +68,12 @@ cd test
 | -      | To Be Done     |
 
 ### Current Status
-| Compiler      |     stl_sort     |    stl_vector      |  strided_vector  | strided_stride  |
-| ------------- |:----------------:|:------------------:|:----------------:|:---------------:|
-| GCC 11.1      |
-| GCC 11.1 + TBB 2021.3.0 |    
-| NVHPC -stdpar=gpu      |
-| NVHPC 21.7 -stdpar=multicore  |
+| Compiler                      | stl_sort | stl_vector | strided_vector | strided_stride |
+| ----------------------------- |:--------:|:----------:|:--------------:|:--------------:|
+| GCC 11.1                      | Y        | Y          | Y              | Y              |  
+| GCC 11.1 + TBB 2021.3.0       | Y        | Y          | Y              | Y              |
+| NVHPC -stdpar=gpu             | -        | -          | -              | -              |
+| NVHPC 21.7 -stdpar=multicore  | Y        | Y          | Y              | Y              |
 
 
 

@@ -1,17 +1,17 @@
-#!/bin/bash                                                                                           
+#!/bin/bash              
 
-# Partition Requested                                                                                 
-#--> #SBATCH -p dgxa100_40g_1tb                                                                       
-#SBATCH -p epyc_a100x4                                                                                
+# Partition Requested
+#--> #SBATCH -p dgxa100_40g_1tb
+#SBATCH -p epyc_a100x4
 
-# GPU Cards Requested                                                                                 
-#SBATCH -G 1                                                                                          
+# GPU Cards Requested
+#SBATCH -G 1
 
-# CPU Tasks Requested                                                                                 
-#SBATCH -n 1                                                                                          
+# CPU Tasks Requested
+#SBATCH -n 1
 
-# Exclusive Node Access                                                                               
-#SBATCH --exclusive                                                                                   
+# Exclusive Node Access
+#SBATCH --exclusive
 
 ################################################
 # This script should be run from within your 
@@ -52,5 +52,5 @@ make install
 # ----------------------------------------------
 # Run the tests and get detailed output
 # ----------------------------------------------
-cd tests
+cd test
 bash runall.sh
