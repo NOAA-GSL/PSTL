@@ -49,9 +49,9 @@ class STRIDED_SAXPY {
 
         auto range_iter = xstd::range(n);
         std::for_each(policy, range_iter.begin(), range_iter.end(),
-                      [a = this->a_, incx = this->incx_, incy = this->incy_, &x = this->x_, &y = this->temp_](auto i) {
-                          y[i * incy] += a * x[i * incx];
-                      });
+            [a = this->a_, incx = this->incx_, incy = this->incy_, x = this->x_.data(), y = this->temp_.data()](auto i) { 
+                y[i * incy] += a * x[i * incx]; 
+            });
     }
 
     /** Check for correct solution
@@ -78,7 +78,7 @@ class STRIDED_SAXPY {
 //
 int main() {
     using Real                    = double;
-    constexpr std::size_t NCYLCE  = 10;         // Number of time to repeat test
+    constexpr std::size_t NCYLCE  = 10;        // Number of time to repeat test
     constexpr std::size_t NSIZE   = 10000000;  // Length of Vectors
     constexpr std::ptrdiff_t INCX = 2;
     constexpr std::ptrdiff_t INCY = 3;
@@ -98,16 +98,16 @@ int main() {
 
     // Calculate Timings
     std::cout << "std::execution::seq\n";
-    correct.push_back( Runner::execute<NCYLCE>(std::execution::seq, op) );
+    correct.push_back(Runner::execute<NCYLCE>(std::execution::seq, op));
 
     std::cout << "std::execution::unseq\n";
-    correct.push_back( Runner::execute<NCYLCE>(std::execution::unseq, op) );
+    correct.push_back(Runner::execute<NCYLCE>(std::execution::unseq, op));
 
     std::cout << "std::execution::par\n";
-    correct.push_back( Runner::execute<NCYLCE>(std::execution::par, op) );
+    correct.push_back(Runner::execute<NCYLCE>(std::execution::par, op));
 
     std::cout << "std::execution::par_unseq\n";
-    correct.push_back( Runner::execute<NCYLCE>(std::execution::par_unseq, op) );
+    correct.push_back(Runner::execute<NCYLCE>(std::execution::par_unseq, op));
 
-    return not std::all_of(correct.begin(), correct.end(), [](auto val){return val;});
+    return not std::all_of(correct.begin(), correct.end(), [](auto val) { return val; });
 }
