@@ -30,6 +30,11 @@ function(add_pstl_test test_name)
 			"$<$<AND:$<BOOL:${NVHPC_FOUND}>,$<BOOL:${NVHPC_GPU_WORKS}>>:-stdpar=gpu>"
 			"$<$<AND:$<BOOL:${NVHPC_FOUND}>,$<BOOL:${NVHPC_MULTICORE_WORKS}>>:-stdpar=multicore>"
 	)
+	target_link_options(${test_target}
+		PRIVATE
+			"$<$<AND:$<BOOL:${NVHPC_FOUND}>,$<BOOL:${NVHPC_GPU_WORKS}>>:-stdpar=gpu>"
+			"$<$<AND:$<BOOL:${NVHPC_FOUND}>,$<BOOL:${NVHPC_MULTICORE_WORKS}>>:-stdpar=multicore>"
+	)
 	add_test(${test_name} ${test_target})
 endfunction()
 
